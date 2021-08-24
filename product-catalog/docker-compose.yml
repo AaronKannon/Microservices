@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  elasticsearch:
+    container_name: "elasticsearch"
+    image: elasticsearch:7.12.1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+
+  redis-cli:
+    depends_on:
+      - redis
+    image: redis
+    network_mode: host
+    command: redis-cli -h 127.0.0.1 ping

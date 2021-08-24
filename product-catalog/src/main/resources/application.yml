@@ -1,0 +1,20 @@
+
+#server:
+#  port: 8081
+
+server:
+  port: 8080
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+spring:
+
+  application:
+    name: product-catalog
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+
