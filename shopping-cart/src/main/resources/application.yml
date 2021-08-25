@@ -1,17 +1,15 @@
 
 server:
-  port: 8081
+  port: 8082
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
 
 spring:
-
   application:
-    name: product-catalog
+    name: shopping-cart
 
   cloud:
     config:
       uri: http://localhost:8888
-
